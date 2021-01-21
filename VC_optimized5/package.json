@@ -1,0 +1,24 @@
+{
+  "name": "pcf-project",
+  "version": "1.0.0",
+  "description": "Project containing your PowerApps Component Framework (PCF) control.",
+  "scripts": {
+    "build": "pcf-scripts build",
+    "clean": "pcf-scripts clean",
+    "rebuild": "pcf-scripts rebuild",
+    "start": "pcf-scripts start"
+  },
+  "dependencies": {
+    "@pcf/host-typings": "^1.6.230-rush-conversion",
+    "@pcf/runtime-typings": "^1.6.230-rush-conversion",
+    "@types/node": "^10.12.18",
+    "@types/powerapps-component-framework": "^1.2.0",
+    "office-ui-fabric-react": ">=7.105.12"
+  },
+  "devDependencies": {
+    "pcf-scripts": "^1",
+    "pcf-start": "^1",
+    "@types/react": "^16.8",
+    "react": "^16.8"
+  }
+}

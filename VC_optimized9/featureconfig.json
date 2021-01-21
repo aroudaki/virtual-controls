@@ -1,0 +1,5 @@
+{
+    "pcfAllowLibraryResources": "on",
+    "pcfAllowCustomWebpack": "on",
+    "pcfAllowEvents": "on"
+}

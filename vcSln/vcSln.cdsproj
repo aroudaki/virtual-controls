@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PowerAppsTargetsPath>$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\PowerApps</PowerAppsTargetsPath>  
+  </PropertyGroup>
+  
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props')" />
+
+  <PropertyGroup>
+    <ProjectGuid>4d95aca5-1e2b-4982-a768-91c47aba8b06</ProjectGuid>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <!--Remove TargetFramework when this is available in 16.1-->
+    <TargetFramework>net462</TargetFramework>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <SolutionRootPath>src</SolutionRootPath>
+  </PropertyGroup>
+
+  <!-- Solution Packager overrides, un-comment to use: SolutionPackagerType (Managed, Unmanaged, Both)
+  <PropertyGroup>
+    <SolutionPackageType>Managed</SolutionPackageType>
+  </PropertyGroup>
+  -->
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\.gitignore" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\bin\**" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\obj\**" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.cdsproj" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.cdsproj.user" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.sln" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\**" Exclude="@(ExcludeDirectories)" />
+    <Content Include="$(SolutionPackageZipFilePath)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\VC_not_optimized\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized1\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized2\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized3\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized4\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized5\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized6\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized7\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized8\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_not_optimized9\VC_not_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized1\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized2\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized3\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized4\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized5\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized6\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized7\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized8\VC_optimized.pcfproj" />
+    <ProjectReference Include="..\VC_optimized9\VC_optimized.pcfproj" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets')" />
+
+</Project>
